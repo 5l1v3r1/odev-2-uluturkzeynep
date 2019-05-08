@@ -16,30 +16,27 @@ namespace FacultyInformationSystem
         {
             InitializeComponent();
         }
-        //private void AddD(Department item)
-        //{
-        //    ListViewItem lvi = new ListViewItem();
-        //    lvi.Text = item.id + item.name;
-        //    lvi.SubItems.Add(item.name);
-        //    lvi.Tag = item;
-        //    listView1.Items.Add(lvi);
-        //}
-
+       
+        Faculty f = new Faculty();
         private void button1_Click(object sender, EventArgs e)
         {
-            //List<Department> depList = new List<Department>()
-            //        {
-            //    new Department {id = textBox1.Text, name = textBox2.Text}
-            //    };
-            //Undergraduate ogrr = new Undergraduate()
-            // {
-            //     name = textBox1.Text,
-            //     id = textBox2.Text
-            // };
-            //for (int i = 0; i < depList.Count; i++)
-            //{
-            //    AddD(depList[i]);
-            //}
+          
+            f.addDepartment(new Department(textBox1.Text, textBox2.Text));
+
+            foreach (Department departments in f.departments)
+            {
+
+                listBox1.Items.Add(departments.ToString());
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           f.deleteDepartment(new Department(textBox3.Text));
+            foreach (Department departments in f.departments)
+            {
+                listBox1.Items.Remove(departments.ToString());
+            }
         }
     }
 }

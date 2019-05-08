@@ -53,5 +53,6 @@ namespace FacultyInformationSystem
                 throw new ArgumentException("You can't delete this faculty, it doesnt exists.");
             }
         }
+       
     }
 }
