@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections;
+
 namespace FacultyInformationSystem
 {
-    abstract class Student
+    class Lessons
     {
-        
-        
-        public string id,name;
-        
+        public string id, name;
         public string getId
         {
             get { return id; }
@@ -21,13 +18,12 @@ namespace FacultyInformationSystem
         {
             get { return name; }
         }
-        
-        
-        public Student()
+        public Lessons()
         {
 
         }
-        public Student(string id, string name)
+
+        public Lessons(string id, string name)
         {
             this.id = id;
             this.name = name;

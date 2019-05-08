@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FacultyInformationSystem
 {
-    class Program
+    class PhD:Student
     {
-        static void Main(string[] args)
+        public PhD()
         {
-          Application.Run(new DepartmentForm());
-           
+
         }
+        public PhD(string id, string name) : base(id,name)
+        {
+            
+        }
+        
     }
 }

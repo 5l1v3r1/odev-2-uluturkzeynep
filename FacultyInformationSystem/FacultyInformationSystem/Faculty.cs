@@ -8,5 +8,26 @@ namespace FacultyInformationSystem
 {
     class Faculty
     {
+        public string id, name;
+        public string getId
+        {
+            get { return id; }
+        }
+
+        public string getName
+        {
+            get { return name; }
+        }
+
+        public Faculty()
+        {
+
+        }
+
+        public Faculty(string id,string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
     }
 }
