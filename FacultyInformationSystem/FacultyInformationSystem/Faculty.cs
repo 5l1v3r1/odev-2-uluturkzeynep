@@ -8,10 +8,8 @@ namespace FacultyInformationSystem
 {
     class Faculty
     {
-        public int id;
-        public string name;
-        public List<Department> departments;
-        public int getId
+        public string id, name;
+        public string getId
         {
             get { return id; }
         }
@@ -26,18 +24,10 @@ namespace FacultyInformationSystem
 
         }
 
-        public Faculty(int id,string name)
+        public Faculty(string id,string name)
         {
             this.id = id;
             this.name = name;
-            departments = new List<Department>();
         }
-       
-        public void addDepartment(Department d)
-        {
-            departments.Add(d);
-        }
-
-
     }
 }

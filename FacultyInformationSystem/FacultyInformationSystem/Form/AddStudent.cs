@@ -56,7 +56,11 @@ namespace FacultyInformationSystem
                     {
                 new Graduate {id = textBox2.Text, name = textBox1.Text}
                 };
-             
+               //Graduate gra = new Graduate()
+               // {
+               //     name = textBox1.Text,
+               //     id = textBox2.Text
+               // };
                for(int i = 0; i < graList.Count; i++)
                 {
                     AddS(graList[i]);
@@ -68,7 +72,11 @@ namespace FacultyInformationSystem
                     {
                 new Undergraduate {id = textBox2.Text, name = textBox1.Text}
                 };
-               
+               //Undergraduate ogrr = new Undergraduate()
+               // {
+               //     name = textBox1.Text,
+               //     id = textBox2.Text
+               // };
                for(int i = 0; i < undList.Count; i++)
                 {
                     AddSi(undList[i]);
@@ -84,6 +92,11 @@ namespace FacultyInformationSystem
                 new PhD {id = textBox2.Text, name = textBox1.Text}
                 };
                 
+                //PhD phd = new PhD()
+                //{
+                //    name = textBox1.Text,
+                //    id = textBox2.Text
+                //};
                 for(int i=0;i<phdList.Count;i++)
                 AddSii(phdList[i]);
             }

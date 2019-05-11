@@ -43,7 +43,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -190,21 +189,11 @@
             this.listView1.TabIndex = 14;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(658, 120);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(232, 228);
-            this.listBox1.TabIndex = 15;
-            // 
             // FacultyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(987, 621);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
@@ -240,6 +229,5 @@
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }

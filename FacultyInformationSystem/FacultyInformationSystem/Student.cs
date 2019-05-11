@@ -26,7 +26,7 @@ namespace FacultyInformationSystem
         public Student()
         {
 
-        } 
+        }
         public Student(string id, string name)
         {
             this.id = id;

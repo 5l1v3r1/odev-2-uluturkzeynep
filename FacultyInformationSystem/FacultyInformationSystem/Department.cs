@@ -18,14 +18,15 @@ namespace FacultyInformationSystem
             get { return name; }
         }
 
-        
+        public Department()
+        {
+
+        }
 
         public Department(string id,string name)
         {
             this.id = id;
             this.name = name;
         }
-
-
     }
 }
