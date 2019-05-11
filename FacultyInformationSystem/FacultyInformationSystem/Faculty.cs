@@ -8,15 +8,10 @@ namespace FacultyInformationSystem
 {
     class Faculty
     {
-        public string id;
+        public int id;
         public string name;
-        private static List<Department> departments = new List<Department>();
-        public static List<Department> getDepartments
-        {
-            get { return departments; }
-        }
-        
-        public string getId
+        public List<Department> departments;
+        public int getId
         {
             get { return id; }
         }
@@ -28,16 +23,16 @@ namespace FacultyInformationSystem
 
         public Faculty()
         {
-            //departments = new List<Department>();
+            departments = new List<Department>();
         }
 
-        public Faculty(string id,string name)
+        public Faculty(int id,string name)
         {
             this.id = id;
             this.name = name;
             departments = new List<Department>();
         }
-        public Faculty(string id)
+        public Faculty(int id)
         {
             this.id = id;
         }
@@ -48,7 +43,7 @@ namespace FacultyInformationSystem
             {
                 departments.Add(d);
             }
-            catch (ArgumentException a)
+            catch (ArgumentException)
             {
 
                 throw new ArgumentException("You can't add this faculty, it is already exists.");
@@ -62,7 +57,7 @@ namespace FacultyInformationSystem
             {
                 departments.Remove(d);
             }
-            catch (ArgumentException a)
+            catch (ArgumentException)
             {
 
                 throw new ArgumentException("You can't delete this faculty, it doesnt exists.");

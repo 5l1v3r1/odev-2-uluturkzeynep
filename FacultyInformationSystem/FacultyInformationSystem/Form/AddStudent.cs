@@ -41,9 +41,6 @@ namespace FacultyInformationSystem
             lvi.Tag = item;
             listView3.Items.Add(lvi);
         }
-        Undergraduate undergraduate = new Undergraduate();
-        Graduate graduate = new Graduate();
-        PhD PhD = new PhD();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -57,7 +54,7 @@ namespace FacultyInformationSystem
 
                 List<Graduate> graList = new List<Graduate>()
                     {
-                new Graduate {id = textBox2.Text, name = textBox1.Text, department=comboBox1.SelectedItem.ToString()}
+                new Graduate {id = textBox2.Text, name = textBox1.Text}
                 };
              
                for(int i = 0; i < graList.Count; i++)
@@ -69,7 +66,7 @@ namespace FacultyInformationSystem
             {
                 List<Undergraduate> undList = new List<Undergraduate>()
                     {
-                new Undergraduate {id = textBox2.Text, name = textBox1.Text, department=comboBox1.SelectedItem.ToString()}
+                new Undergraduate {id = textBox2.Text, name = textBox1.Text}
                 };
                
                for(int i = 0; i < undList.Count; i++)
@@ -84,26 +81,18 @@ namespace FacultyInformationSystem
 
                 List<PhD> phdList = new List<PhD>()
                     {
-                new PhD {id = textBox2.Text, name = textBox1.Text, department=comboBox1.SelectedItem.ToString()}
+                new PhD {id = textBox2.Text, name = textBox1.Text}
                 };
                 
                 for(int i=0;i<phdList.Count;i++)
                 AddSii(phdList[i]);
             }
-            
-            //https://www.frmtr.com/c-/4643411-listbox-daki-degeri-comboboxa-aktarma-yardim.html
-         
+
         }
 
         private void AddStudent_Load(object sender, EventArgs e)
-        {
-            DepartmentForm a = new DepartmentForm();
-            foreach (Department department in Faculty.getDepartments)
-            {
-                comboBox2.Items.Add(department.ToString());
-            }
-
-            Refresh();
+        { 
+         
         }
     }
 }

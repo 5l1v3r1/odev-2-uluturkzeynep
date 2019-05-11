@@ -79,7 +79,7 @@
     </Compile>
     <Compile Include="Graduate.cs" />
     <Compile Include="Lecturer.cs" />
-    <Compile Include="Course.cs" />
+    <Compile Include="Lessons.cs" />
     <Compile Include="PhD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,8 +117,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\DataSources\Department.datasource" />
-    <None Include="Properties\DataSources\Faculty.datasource" />
     <None Include="Properties\lavender.png" />
   </ItemGroup>
   <ItemGroup>

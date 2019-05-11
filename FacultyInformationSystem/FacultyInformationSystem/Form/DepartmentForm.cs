@@ -21,27 +21,22 @@ namespace FacultyInformationSystem
         private void button1_Click(object sender, EventArgs e)
         {
           
-            f.addDepartment(new Department(textBox1.Text, textBox2.Text,comboBox1.SelectedItem.ToString()));
-            
-            foreach (Department departments in Faculty.getDepartments)
+            f.addDepartment(new Department(textBox1.Text, textBox2.Text));
+
+            foreach (Department departments in f.departments)
             {
-                    listBox1.Items.Add(departments.toString());
+
+                listBox1.Items.Add(departments.ToString());
             }
-            AddStudent add = new AddStudent();
-            add.Show();
         }
 
-        
-        private void DepartmentForm_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            foreach (Faculty faculties in University.getFaculties)
+           f.deleteDepartment(new Department(textBox3.Text));
+            foreach (Department departments in f.departments)
             {
-                
-                comboBox1.Items.Add(faculties.ToString());
+                listBox1.Items.Remove(departments.ToString());
             }
-
-            Refresh();
-
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FacultyInformationSystem
 {
-    class Course
+    class Lessons
     {
         public string id, name;
         public string getId
@@ -18,12 +18,12 @@ namespace FacultyInformationSystem
         {
             get { return name; }
         }
-        public Course()
+        public Lessons()
         {
 
         }
 
-        public Course(string id, string name)
+        public Lessons(string id, string name)
         {
             this.id = id;
             this.name = name;

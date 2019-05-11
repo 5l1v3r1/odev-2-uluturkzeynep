@@ -12,14 +12,11 @@ namespace FacultyInformationSystem
         {
 
         }
-        public Graduate(string id, string name,string department) : base(id, name,department)
+        public Graduate(string id, string name) : base(id, name)
         {
 
         }
 
-        public override string ToString()
-        {
-            return $"Name:{name} Id:{id} Department:{department}";
-        }
+       
     }
 }

@@ -9,14 +9,7 @@ namespace FacultyInformationSystem
     class University
     {
 
-        private static List<Faculty> faculties=new List<Faculty>();
-        public static List<Faculty> getFaculties
-        {
-            get
-            {
-                return faculties;
-            }
-        }
+        public List<Faculty> faculties=new List<Faculty>();
         //public List<Faculty> Faculties
         //{
         //    get
@@ -37,10 +30,10 @@ namespace FacultyInformationSystem
         public void addFaculty(Faculty f)
         {
             try
-            { 
+            {
                 faculties.Add(f);
             }
-            catch (ArgumentException a)
+            catch (ArgumentException)
             {
 
                 throw new ArgumentException("You can't add this faculty, it is already exists.");
@@ -54,7 +47,7 @@ namespace FacultyInformationSystem
             {
                 faculties.Remove(f);
             }
-            catch (ArgumentException a)
+            catch (ArgumentException)
             {
 
                 throw new ArgumentException("You can't delete this faculty, it doesnt exists.");

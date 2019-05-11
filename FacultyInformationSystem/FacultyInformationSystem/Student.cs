@@ -8,7 +8,9 @@ namespace FacultyInformationSystem
 {
     abstract class Student
     {
-        public string id,name,department;
+        
+        
+        public string id,name;
         
         public string getId
         {
@@ -20,22 +22,15 @@ namespace FacultyInformationSystem
             get { return name; }
         }
         
-        public string getDepartment
-        {
-            get { return department; }
-        }
         
         public Student()
         {
 
         } 
-        public Student(string id, string name,string department)
+        public Student(string id, string name)
         {
             this.id = id;
             this.name = name;
-            this.department = department;
         }
-
-        abstract public string ToString();
     }
 }
