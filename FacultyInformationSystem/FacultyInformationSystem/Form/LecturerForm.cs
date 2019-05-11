@@ -16,31 +16,64 @@ namespace FacultyInformationSystem
         {
             InitializeComponent();
         }
-        private void AddL(Lecturer item)
-        {
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = item.id + item.name;
-            lvi.SubItems.Add(item.name);
-            lvi.Tag = item;
-            listView1.Items.Add(lvi);
-        }
 
+        Department d = new Department();
         private void button1_Click(object sender, EventArgs e)
         {
-            List<Lecturer> lecList = new List<Lecturer>()
-                    {
-                new Lecturer {id = textBox1.Text, name = textBox2.Text}
-                };
-
-            for (int i = 0; i < lecList.Count; i++)
-            {
-                AddL(lecList[i]);
-            }
+           
+            
         }
 
         private void LecturerForm_Load(object sender, EventArgs e)
         {
+            foreach (Department department in Faculty.GetDepartments)
+            {
+                comboBox1.Items.Add(department.getName.ToString());
+            }
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            d.addLecturer(new Lecturer(textBox1.Text, textBox2.Text, new Department(comboBox1.SelectedItem.ToString())));
+            listBox1.Items.Clear();
+            foreach (Lecturer lecturer in Department.GetLecturers)
+            {
+                listBox1.Items.Add(lecturer.ToString());
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            d.deleteLecturer(new Lecturer(textBox2.Text));
+            listBox1.Items.Clear();
+            foreach (Lecturer lecturer in Department.GetLecturers)
+            {
+                listBox1.Items.Remove(lecturer.ToString());
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FacultyForm facultyForm = new FacultyForm();
+            facultyForm.Show(); this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DepartmentForm departmentForm = new DepartmentForm();
+            departmentForm.Show(); this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LessonsForm lessonsForm = new LessonsForm();
+            lessonsForm.Show(); this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AddStudent addStudent = new AddStudent();
+            addStudent.Show(); this.Hide();
         }
     }
 }

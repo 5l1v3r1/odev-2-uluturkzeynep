@@ -22,17 +22,24 @@ namespace FacultyInformationSystem
         {
             u.addFaculty(new Faculty(textBox1.Text,textBox2.Text));
             DepartmentForm department = new DepartmentForm();
+            listBox1.Items.Clear();
             foreach (Faculty faculties in University.GetFaculties)
             {
                 listBox1.Items.Add(faculties.ToString());
             }
-            department.Show();
+            
         }
         
         private void FacultyForm_Load(object sender, EventArgs e)
         {
            
         
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DepartmentForm departmentForm = new DepartmentForm();
+            departmentForm.Show(); this.Hide();
         }
     }
 }

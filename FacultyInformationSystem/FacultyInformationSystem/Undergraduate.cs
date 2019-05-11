@@ -8,13 +8,12 @@ namespace FacultyInformationSystem
 {
     class Undergraduate:Student
     {
-        private Department department;
-        public Department GetDepartment
-        {
-            get { return department; }
-        }
-
+        
         public Undergraduate()
+        {
+
+        }
+        public Undergraduate(string name):base(name)
         {
 
         }
@@ -25,7 +24,7 @@ namespace FacultyInformationSystem
         Department d = new Department();
         public override string ToString()
         {
-            return $"Name:{name} Id:{id}";
+            return $"S Name:{name} S Id:{id} Department:{GetDepartment.getName}";
         }
        
     }

@@ -38,7 +38,7 @@ namespace FacultyInformationSystem
 
         public string ToString()
         {
-            return $"D Name:{name} D Id:{id} Department:{department.toString()}";
+            return $"D Name:{name} D Id:{id} Department:{department.getName}";
         }
     }
 }

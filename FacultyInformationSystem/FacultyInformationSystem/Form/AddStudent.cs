@@ -25,7 +25,8 @@ namespace FacultyInformationSystem
             if (comboBox1.SelectedIndex == 0)
             {
                 d.addStudent(new Graduate(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
-                foreach (Graduate student in Department.GetStudents)
+                listBox1.Items.Clear();
+                foreach (Student student in Department.GetStudents)
                 {
                     listBox1.Items.Add(student.ToString());
                 }
@@ -33,21 +34,21 @@ namespace FacultyInformationSystem
             if (comboBox1.SelectedIndex == 1)
             {
                 d.addStudent(new Undergraduate(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
-                foreach (Undergraduate student in Department.GetStudents)
+                listBox1.Items.Clear();
+                foreach (Student student in Department.GetStudents)
                 {
-                    listBox2.Items.Add(student.ToString());
+                    listBox1.Items.Add(student.ToString());
                 }
             }
             if (comboBox1.SelectedIndex == 2)
             {
                 d.addStudent(new PhD(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
-                foreach (PhD student in Department.GetStudents)
+                listBox1.Items.Clear();
+                foreach (Student student in Department.GetStudents)
                 {
-                    listBox3.Items.Add(student.ToString());
+                    listBox1.Items.Add(student.ToString());
                 }
             }
-            LessonsForm lessonsForm = new LessonsForm();
-            lessonsForm.Show();
            
         }
 
@@ -57,6 +58,30 @@ namespace FacultyInformationSystem
             {
                 comboBox2.Items.Add(department.getName.ToString());
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FacultyForm facultyForm = new FacultyForm();
+            facultyForm.Show(); this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DepartmentForm departmentForm = new DepartmentForm();
+            departmentForm.Show(); this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LessonsForm lessonsForm = new LessonsForm();
+            lessonsForm.Show(); this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LecturerForm lecturerForm = new LecturerForm();
+            lecturerForm.Show(); this.Hide();
         }
     }
 }

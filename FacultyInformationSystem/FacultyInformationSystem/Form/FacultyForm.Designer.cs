@@ -121,12 +121,13 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(442, 419);
+            this.button2.Location = new System.Drawing.Point(31, 464);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 43);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Next Step";
+            this.button2.Text = "Department";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // listBox1
             // 

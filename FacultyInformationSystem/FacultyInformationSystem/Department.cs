@@ -41,7 +41,7 @@ namespace FacultyInformationSystem
 
         public Department(string name)
         {
-
+            this.name = name;
         }
 
         public Department(string id,string name)
@@ -129,7 +129,20 @@ namespace FacultyInformationSystem
 
                 throw new ArgumentException("You can't add this course, it is already exists.");
             }
-            //https://docs.microsoft.com/tr-tr/dotnet/api/system.argumentexception?view=netframework-4.8 abimin yönlendirmesi ile
+            
+        }
+
+        public void deleteLecturer(Lecturer l)
+        {
+            try
+            {
+                lecturers.Remove(l);
+            }
+            catch (ArgumentException a)
+            {
+
+                throw new ArgumentException("You can't delete this course, it doesnt exists.");
+            }
         }
 
         public string ToString()

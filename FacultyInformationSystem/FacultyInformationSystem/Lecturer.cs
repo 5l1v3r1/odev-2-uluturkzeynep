@@ -8,7 +8,7 @@ namespace FacultyInformationSystem
 {
     class Lecturer
     {
-        public string id, name;
+        private string id, name;
         public string getId
         {
             get { return id; }
@@ -18,15 +18,28 @@ namespace FacultyInformationSystem
         {
             get { return name; }
         }
+        private Department department;
+        public Department GetDepartment
+        {
+            get { return department; }
+        }
         public Lecturer()
         {
 
         }
-
-        public Lecturer(string id, string name)
+        public Lecturer(string id)
+        {
+            this.id = id;
+        }
+        public Lecturer(string id, string name,Department department)
         {
             this.id = id;
             this.name = name;
+            this.department = department;
+        }
+        public string ToString()
+        {
+            return $"L Name:{name} L Id:{id} Department:{department.getName}";
         }
     }
 }

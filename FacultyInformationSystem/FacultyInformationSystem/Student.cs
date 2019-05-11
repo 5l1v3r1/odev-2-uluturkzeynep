@@ -30,6 +30,10 @@ namespace FacultyInformationSystem
         {
 
         } 
+        public Student(string name)
+        {
+            this.name = name;
+        }
         public Student(string id, string name,Department department)
         {
             this.id = id;

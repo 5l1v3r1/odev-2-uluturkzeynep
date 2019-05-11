@@ -8,8 +8,12 @@ namespace FacultyInformationSystem
 {
     class Graduate:Student
     {
-       
+        
         public Graduate()
+        {
+
+        }
+        public Graduate(string name):base(name)
         {
 
         }
@@ -20,7 +24,7 @@ namespace FacultyInformationSystem
         Department d = new Department();
         public override string ToString()
         {
-            return $"Id:{id} Name:{name}";
+            return $"S Id:{id} S Name:{name} Department:{GetDepartment.getName}";
         }
         
 

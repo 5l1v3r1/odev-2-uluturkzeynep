@@ -9,12 +9,12 @@ namespace FacultyInformationSystem
 {
     class PhD:Student
     {
-        private Department department;
-        public Department GetDepartment
-        {
-            get { return department; }
-        }
+        
         public PhD()
+        {
+
+        }
+        public PhD(string name) : base(name)
         {
 
         }
@@ -22,10 +22,10 @@ namespace FacultyInformationSystem
         {
             
         }
-        Department d = new Department();
+        
         public override string ToString()
         {
-            return $"Name:{name} Id:{id}";
+            return $"S Name:{name} S Id:{id} Department:{GetDepartment.getName}";
         }
        
     }
