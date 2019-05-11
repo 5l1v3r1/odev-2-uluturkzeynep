@@ -16,28 +16,36 @@ namespace FacultyInformationSystem
         {
             InitializeComponent();
         }
-       
+        //private void AddF(Faculty item)
+        //{
+        //    ListViewItem lvi = new ListViewItem();
+        //    lvi.Text = item.id + item.name;
+        //    lvi.SubItems.Add(item.name);
+        //    lvi.Tag = item;
+        //    listView1.Items.Add(lvi);
+        //}
         University u = new University();
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            //List<Faculty> facList = new List<Faculty>()
+            //        {
+            //    new Faculty {id = textBox1.Text, name = textBox2.Text}
+            //    };
+
+            //for (int i = 0; i < facList.Count; i++)
+            //{
+            //    AddF(facList[i]);
+            //}
+
+            
             u.addFaculty(new Faculty(Convert.ToInt16(textBox1.Text), textBox2.Text));
-            foreach (Faculty faculties in u.faculties)
-            {
-                listBox1.Items.Add(faculties.ToString());
-            }
 
-            DepartmentForm d = new DepartmentForm();
-            d.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            u.deleteFaculty(new Faculty(Convert.ToInt16(textBox3.Text)));
-            foreach (Faculty faculties in u.faculties)
+            for (int i=0;i<u.faculties.Count;i++)
             {
-                listBox1.Items.Remove(faculties.ToString());
+                listBox1.Items.Add(u.faculties[i]);
             }
+            Console.WriteLine(u.faculties[0]);
+
         }
     }
 }

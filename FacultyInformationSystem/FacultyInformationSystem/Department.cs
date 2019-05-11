@@ -26,35 +26,6 @@ namespace FacultyInformationSystem
             this.name = name;
         }
 
-        public Department(string id)
-        {
-            this.id = id;
-        }
-
-        public void addCourse()
-        {
-
-        }
-
-        public void deleteCourse()
-        {
-
-        }
-
-        public void addLecturer()
-        {
-
-        }
-
-        public void deleteLecturer()
-        {
-
-        }
-
-        public string ToString()
-        {
-            return $"Name:{name} Id:{id}";
-        }
 
     }
 }
