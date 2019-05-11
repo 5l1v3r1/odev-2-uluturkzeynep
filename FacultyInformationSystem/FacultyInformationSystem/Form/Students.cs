@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace FacultyInformationSystem
 {
-    public partial class DepartmentForm : Form
+    public partial class Students : Form
     {
-        public DepartmentForm()
+        public Students()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FacultyForm f1 = new FacultyForm();
+            UI f1 = new UI();
             f1.Show();
             this.Hide();
         }

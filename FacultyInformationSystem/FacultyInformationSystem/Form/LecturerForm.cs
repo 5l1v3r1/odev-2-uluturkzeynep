@@ -16,31 +16,12 @@ namespace FacultyInformationSystem
         {
             InitializeComponent();
         }
-        private void AddL(Lecturer item)
-        {
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = item.id + item.name;
-            lvi.SubItems.Add(item.name);
-            lvi.Tag = item;
-            listView1.Items.Add(lvi);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<Lecturer> lecList = new List<Lecturer>()
-                    {
-                new Lecturer {id = textBox1.Text, name = textBox2.Text}
-                };
-
-            for (int i = 0; i < lecList.Count; i++)
-            {
-                AddL(lecList[i]);
-            }
-        }
-
-        private void LecturerForm_Load(object sender, EventArgs e)
-        {
-
+            UI f1 = new UI();
+            f1.Show();
+            this.Hide();
         }
     }
 }

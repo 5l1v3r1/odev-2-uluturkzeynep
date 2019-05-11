@@ -6,17 +6,7 @@ using System.Threading.Tasks;
 
 namespace FacultyInformationSystem
 {
-    class Graduate:Student
+    class Person
     {
-        public Graduate()
-        {
-
-        }
-        public Graduate(string id, string name) : base(id, name)
-        {
-
-        }
-
-       
     }
 }

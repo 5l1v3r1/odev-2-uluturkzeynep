@@ -1,6 +1,6 @@
 ﻿namespace FacultyInformationSystem
 {
-    partial class LecturerForm
+    partial class Students
     {
         /// <summary>
         /// Required designer variable.
@@ -38,9 +38,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::FacultyInformationSystem.Properties.Resources.lightsteelblue;
-            this.pictureBox2.Location = new System.Drawing.Point(-71, 281);
+            this.pictureBox2.Location = new System.Drawing.Point(-109, 299);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1057, 344);
+            this.pictureBox2.Size = new System.Drawing.Size(1106, 324);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -48,9 +48,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FacultyInformationSystem.Properties.Resources.lavender;
-            this.pictureBox1.Location = new System.Drawing.Point(-127, -85);
+            this.pictureBox1.Location = new System.Drawing.Point(-121, -69);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1113, 368);
+            this.pictureBox1.Size = new System.Drawing.Size(1129, 369);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -59,7 +59,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.RosyBrown;
-            this.button1.Location = new System.Drawing.Point(814, 555);
+            this.button1.Location = new System.Drawing.Point(813, 565);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 44);
             this.button1.TabIndex = 5;
@@ -67,7 +67,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // LecturerForm
+            // Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,8 +75,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "LecturerForm";
-            this.Text = "LecturerForm";
+            this.Name = "Students";
+            this.Text = "Students";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -11,8 +11,7 @@ namespace FacultyInformationSystem
     {
         static void Main(string[] args)
         {
-          Application.Run(new DepartmentForm());
-           
+            Application.Run(new UI());
         }
     }
 }
