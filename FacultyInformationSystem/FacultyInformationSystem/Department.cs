@@ -8,7 +8,23 @@ namespace FacultyInformationSystem
 {
     class Department
     {
-        public string id, name;
+        private string id, name;
+        private Faculty faculty;
+        public Faculty GetFaculty
+        {
+            get { return faculty; }
+        }
+
+        private Course course;
+        public Course GetCourse
+        {
+            get { return course; }
+        }
+        private Student student;
+        public Student GetStudent
+        {
+            get { return student; }
+        }
         public string getID
         {
             get { return id; }
@@ -18,7 +34,15 @@ namespace FacultyInformationSystem
             get { return name; }
         }
 
-        
+        public Department()
+        {
+
+        }
+
+        public Department(string name)
+        {
+
+        }
 
         public Department(string id,string name)
         {
@@ -26,34 +50,96 @@ namespace FacultyInformationSystem
             this.name = name;
         }
 
-        public Department(string id)
+        public Department(string id,string name,Faculty faculty)
         {
             this.id = id;
+            this.name = name;
+            this.faculty = faculty;
         }
 
-        public void addCourse()
-        {
 
+        public Department(Course course)
+        {
+            
         }
 
-        public void deleteCourse()
+        private static List<Course> courses = new List<Course>();
+        public static List<Course> GetCourses
         {
-
+            get
+            {
+                return courses;
+            }
         }
 
-        public void addLecturer()
+        public void addCourse(Course c)
         {
+            try
+            {
+                courses.Add(c);
+            }
+            catch (ArgumentException a)
+            {
 
+                throw new ArgumentException("You can't add this course, it is already exists.");
+            }
+            
         }
 
-        public void deleteLecturer()
+        private static List<Student> students = new List<Student>();
+        public static List<Student> GetStudents
         {
+            get
+            {
+                return students;
+            }
+        }
 
+        public void addStudent(Student s)
+        {
+            try
+            {
+                students.Add(s);
+            }
+            catch (ArgumentException a)
+            {
+
+                throw new ArgumentException("You can't add this student, it is already exists.");
+            }
+           
+        }
+
+        private static List<Lecturer> lecturers = new List<Lecturer>();
+        public static List<Lecturer> GetLecturers
+        {
+            get
+            {
+                return lecturers;
+            }
+        }
+
+        public void addLecturer(Lecturer l)
+        {
+            try
+            {
+                lecturers.Add(l);
+            }
+            catch (ArgumentException a)
+            {
+
+                throw new ArgumentException("You can't add this course, it is already exists.");
+            }
+            //https://docs.microsoft.com/tr-tr/dotnet/api/system.argumentexception?view=netframework-4.8 abimin yönlendirmesi ile
         }
 
         public string ToString()
         {
-            return $"Name:{name} Id:{id}";
+            return $"D Name:{name} D Id:{id} Faculty:{faculty.getName}"; 
+        }
+
+        public string toString()
+        {
+            return $"D Name:{name}";
         }
 
     }

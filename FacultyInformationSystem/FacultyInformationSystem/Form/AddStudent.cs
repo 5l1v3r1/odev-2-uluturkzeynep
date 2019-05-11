@@ -17,82 +17,46 @@ namespace FacultyInformationSystem
         {
             InitializeComponent();
         }
-        private void AddS(Graduate item)
-        {
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = item.id+ item.name;
-            lvi.SubItems.Add(item.name);
-            lvi.Tag = item;
-            listView1.Items.Add(lvi);
-        }
-        private void AddSi(Undergraduate item)
-        {
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = item.id + item.name;
-            lvi.SubItems.Add(item.name);
-            lvi.Tag = item;
-            listView2.Items.Add(lvi);
-        }
-        private void AddSii(PhD item)
-        {
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = item.id + item.name;
-            lvi.SubItems.Add(item.name);
-            lvi.Tag = item;
-            listView3.Items.Add(lvi);
-        }
 
+        Department d = new Department();
         private void button1_Click(object sender, EventArgs e)
         {
 
             if (comboBox1.SelectedIndex == 0)
             {
-                //Dictionary<int, Graduate> Grad = new Dictionary<int, Graduate>();
-                //Grad.Add(Convert.ToInt32(textBox2.Text), new Graduate(textBox1.Text, textBox2.Text));
-
-                //listBox1.Items.Add(Grad.Values);
-
-                List<Graduate> graList = new List<Graduate>()
-                    {
-                new Graduate {id = textBox2.Text, name = textBox1.Text}
-                };
-             
-               for(int i = 0; i < graList.Count; i++)
+                d.addStudent(new Graduate(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
+                foreach (Graduate student in Department.GetStudents)
                 {
-                    AddS(graList[i]);
+                    listBox1.Items.Add(student.ToString());
                 }
             }
             if (comboBox1.SelectedIndex == 1)
             {
-                List<Undergraduate> undList = new List<Undergraduate>()
-                    {
-                new Undergraduate {id = textBox2.Text, name = textBox1.Text}
-                };
-               
-               for(int i = 0; i < undList.Count; i++)
+                d.addStudent(new Undergraduate(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
+                foreach (Undergraduate student in Department.GetStudents)
                 {
-                    AddSi(undList[i]);
+                    listBox2.Items.Add(student.ToString());
                 }
-               
-
             }
             if (comboBox1.SelectedIndex == 2)
             {
-
-                List<PhD> phdList = new List<PhD>()
-                    {
-                new PhD {id = textBox2.Text, name = textBox1.Text}
-                };
-                
-                for(int i=0;i<phdList.Count;i++)
-                AddSii(phdList[i]);
+                d.addStudent(new PhD(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
+                foreach (PhD student in Department.GetStudents)
+                {
+                    listBox3.Items.Add(student.ToString());
+                }
             }
-
+            LessonsForm lessonsForm = new LessonsForm();
+            lessonsForm.Show();
+           
         }
 
         private void AddStudent_Load(object sender, EventArgs e)
-        { 
-         
+        {
+            foreach (Department department in Faculty.GetDepartments) //https://www.frmtr.com/c-/4643411-listbox-daki-degeri-comboboxa-aktarma-yardim.html
+            {
+                comboBox2.Items.Add(department.getName.ToString());
+            }
         }
     }
 }

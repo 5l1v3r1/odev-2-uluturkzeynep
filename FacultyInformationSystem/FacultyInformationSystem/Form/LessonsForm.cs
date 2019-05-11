@@ -19,26 +19,18 @@ namespace FacultyInformationSystem
 
         private void LessonsForm_Load(object sender, EventArgs e)
         {
-
+            foreach (Department department in Faculty.GetDepartments) 
+            {
+                comboBox1.Items.Add(department.getName.ToString());
+            }
         }
-        private void AddLes(Lessons item)
-        {
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = item.id + item.name;
-            lvi.SubItems.Add(item.name);
-            lvi.Tag = item;
-            listView1.Items.Add(lvi);
-        }
+        Department d = new Department();
         private void button2_Click(object sender, EventArgs e)
         {
-            List<Lessons> lesList = new List<Lessons>()
-                    {
-                new Lessons {id = textBox1.Text, name = textBox2.Text}
-                };
-
-            for (int i = 0; i < lesList.Count; i++)
+            d.addCourse(new Course(textBox1.Text, textBox2.Text, new Department(d.getID, d.getName, d.GetFaculty)));
+            foreach (Course course in Department.GetCourses)
             {
-                AddLes(lesList[i]);
+                listBox1.Items.Add(course.ToString());
             }
         }
     }

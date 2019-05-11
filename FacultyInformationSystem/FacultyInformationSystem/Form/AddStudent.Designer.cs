@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,12 +36,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label4 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.label5 = new System.Windows.Forms.Label();
-            this.listView3 = new System.Windows.Forms.ListView();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -106,14 +111,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(417, 44);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(215, 127);
-            this.listView1.TabIndex = 5;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -122,14 +119,6 @@
             this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Graduate";
-            // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(417, 215);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(215, 127);
-            this.listView2.TabIndex = 5;
-            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // label5
             // 
@@ -140,14 +129,6 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Undergraduate";
             // 
-            // listView3
-            // 
-            this.listView3.Location = new System.Drawing.Point(417, 403);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(215, 127);
-            this.listView3.TabIndex = 5;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -157,19 +138,70 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "PhD";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(30, 275);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 17);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Department";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "getName", true));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(33, 309);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(157, 24);
+            this.comboBox2.TabIndex = 2;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(417, 44);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(436, 132);
+            this.listBox1.TabIndex = 7;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(417, 215);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(436, 132);
+            this.listBox2.TabIndex = 7;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 16;
+            this.listBox3.Location = new System.Drawing.Point(417, 404);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(436, 132);
+            this.listBox3.TabIndex = 7;
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(FacultyInformationSystem.Department);
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 653);
+            this.ClientSize = new System.Drawing.Size(885, 548);
+            this.Controls.Add(this.listBox3);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.listView3);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -178,6 +210,7 @@
             this.Name = "AddStudent";
             this.Text = "AddStudent";
             this.Load += new System.EventHandler(this.AddStudent_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,11 +225,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox3;
+        public System.Windows.Forms.ComboBox comboBox2;
     }
 }

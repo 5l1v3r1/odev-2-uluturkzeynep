@@ -8,15 +8,21 @@ namespace FacultyInformationSystem
 {
     class Graduate:Student
     {
+       
         public Graduate()
         {
 
         }
-        public Graduate(string id, string name) : base(id, name)
+        public Graduate(string id, string name, Department department) : base(id, name,department)
         {
 
         }
+        Department d = new Department();
+        public override string ToString()
+        {
+            return $"Id:{id} Name:{name}";
+        }
+        
 
-       
     }
 }

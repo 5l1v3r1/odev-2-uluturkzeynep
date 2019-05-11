@@ -20,23 +20,24 @@ namespace FacultyInformationSystem
         Faculty f = new Faculty();
         private void button1_Click(object sender, EventArgs e)
         {
-          
-            f.addDepartment(new Department(textBox1.Text, textBox2.Text));
-
-            foreach (Department departments in f.departments)
+            f.addDepartment(new Department(textBox1.Text,textBox2.Text,new Faculty(comboBox1.SelectedItem.ToString())));
+            foreach (Department departments in Faculty.GetDepartments)
             {
-
                 listBox1.Items.Add(departments.ToString());
             }
+            AddStudent add = new AddStudent();
+            add.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        
+        private void DepartmentForm_Load(object sender, EventArgs e)
         {
-           f.deleteDepartment(new Department(textBox3.Text));
-            foreach (Department departments in f.departments)
+            foreach (Faculty faculties in University.GetFaculties)
             {
-                listBox1.Items.Remove(departments.ToString());
+                comboBox1.Items.Add(faculties.getName.ToString());
             }
+
+
         }
     }
 }

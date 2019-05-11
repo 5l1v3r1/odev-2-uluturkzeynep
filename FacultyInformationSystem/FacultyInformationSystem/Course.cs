@@ -3,41 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections;
+
 namespace FacultyInformationSystem
 {
-    abstract class Student
+    class Course
     {
-        public string id,name;
+        private string id, name;
+        public string getId
+        {
+            get { return id; }
+        }
+        public string getName
+        {
+            get { return name; }
+        }
+
         private Department department;
         public Department GetDepartment
         {
             get { return department; }
         }
 
-        public string getId
-        {
-            get { return id; }
-        }
-
-        public string getName
-        {
-            get { return name; }
-        }
-        
-        
-        public Student()
+        public Course()
         {
 
-        } 
-        public Student(string id, string name,Department department)
+        }
+
+        public Course(string id,string name,Department department)
         {
             this.id = id;
             this.name = name;
             this.department = department;
         }
 
-        abstract public string ToString();
-        
+        public string ToString()
+        {
+            return $"D Name:{name} D Id:{id} Department:{department.toString()}";
+        }
     }
 }
