@@ -42,6 +42,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -56,7 +57,7 @@
             this.textBox2.Location = new System.Drawing.Point(33, 140);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(157, 22);
-            this.textBox2.TabIndex = 0;
+            this.textBox2.TabIndex = 1;
             // 
             // label1
             // 
@@ -102,7 +103,7 @@
             this.button1.Location = new System.Drawing.Point(235, 118);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 67);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Add Student";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -122,23 +123,25 @@
             this.comboBox2.Location = new System.Drawing.Point(33, 309);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(157, 24);
-            this.comboBox2.TabIndex = 2;
+            this.comboBox2.TabIndex = 3;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(417, 44);
             this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(436, 452);
-            this.listBox1.TabIndex = 7;
+            this.listBox1.TabIndex = 9;
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(33, 518);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 47);
-            this.button2.TabIndex = 8;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Faculty";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -148,7 +151,7 @@
             this.button3.Location = new System.Drawing.Point(187, 518);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(124, 47);
-            this.button3.TabIndex = 8;
+            this.button3.TabIndex = 6;
             this.button3.Text = "Department";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -158,7 +161,7 @@
             this.button4.Location = new System.Drawing.Point(341, 518);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(124, 47);
-            this.button4.TabIndex = 8;
+            this.button4.TabIndex = 7;
             this.button4.Text = "Course";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -173,11 +176,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(431, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 29);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Department";
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 601);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -216,5 +230,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label4;
     }
 }

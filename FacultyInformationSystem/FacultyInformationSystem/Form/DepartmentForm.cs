@@ -61,7 +61,7 @@ namespace FacultyInformationSystem
         private void button5_Click(object sender, EventArgs e)
         {
             FacultyForm facultyForm = new FacultyForm();
-            facultyForm.Show(); this.Hide();
+            facultyForm.Show(); this.Hide(); 
         }
     }
 }

@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addLecturerToCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addLecturerToCourse.Designer.cs">
+      <DependentUpon>addLecturerToCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addStudentToCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addStudentToCourse.Designer.cs">
+      <DependentUpon>addStudentToCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\AddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addLecturerToCourse.resx">
+      <DependentUpon>addLecturerToCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStudentToCourse.resx">
+      <DependentUpon>addStudentToCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\AddStudent.resx">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </EmbeddedResource>

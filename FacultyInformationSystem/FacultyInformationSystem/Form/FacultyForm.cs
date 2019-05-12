@@ -29,7 +29,10 @@ namespace FacultyInformationSystem
             }
             
         }
-        
+        public void add()
+        {
+
+        }
         private void FacultyForm_Load(object sender, EventArgs e)
         {
            

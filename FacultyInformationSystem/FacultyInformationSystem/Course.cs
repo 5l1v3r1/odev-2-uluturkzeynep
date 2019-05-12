@@ -24,6 +24,18 @@ namespace FacultyInformationSystem
             get { return department; }
         }
 
+        private Lecturer lecturer;
+        public Lecturer GetLecturer
+        {
+            get { return lecturer; }
+        }
+
+        private Student student;
+        public Student GetStudent
+        {
+            get { return student; }
+        }
+
         public Course()
         {
 

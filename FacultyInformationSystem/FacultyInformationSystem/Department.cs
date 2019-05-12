@@ -25,6 +25,7 @@ namespace FacultyInformationSystem
         {
             get { return student; }
         }
+        private Lecturer lecturer;
         public string getID
         {
             get { return id; }

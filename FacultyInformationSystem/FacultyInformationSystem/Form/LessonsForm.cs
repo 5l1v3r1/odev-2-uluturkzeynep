@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace FacultyInformationSystem
         private void button2_Click(object sender, EventArgs e)
         {
             d.addCourse(new Course(textBox1.Text, textBox2.Text,new Department(comboBox1.SelectedItem.ToString())));
-            listBox1.Items.Clear();
+            
             foreach (Course course in Department.GetCourses)
             {
                 listBox1.Items.Add(course.ToString());
@@ -37,16 +38,23 @@ namespace FacultyInformationSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            LecturerForm lecturerForm = new LecturerForm();
+            addLecturerToCourse lecturerForm = new addLecturerToCourse();
             lecturerForm.Show();
             this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            AddStudent addStudent = new AddStudent();
-            addStudent.Show();
-            this.Hide();
+            if (listBox1.SelectedItem != null)
+            {
+                addStudentToCourse addStudent = new addStudentToCourse();
+                addStudent.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("You didnt pick a Course from list.");
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -59,6 +67,29 @@ namespace FacultyInformationSystem
         {
             FacultyForm facultyForm = new FacultyForm();
             facultyForm.Show(); this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {//https://www.kodlamamerkezi.com/c-net/c-ile-dosya-okuma-ve-yazma-islemleri/
+            FileStream fileStream = new FileStream(@"./AboutCourse.txt",FileMode.OpenOrCreate);
+            StreamWriter sW = new StreamWriter(fileStream);
+            
+            foreach(Course c in Department.GetCourses)
+            {
+                sW.WriteLine("Course->" + c.getName);
+                foreach(Lecturer l in Department.GetLecturers)
+                {
+                    if(l.GetDepartment.GetCourse==c.GetDepartment.GetCourse)
+                    sW.WriteLine("Lecturer->" +l.getId + l.getName);
+                }
+                foreach(Student s in Department.GetStudents)
+                {
+                    if(s.GetDepartment.GetCourse==c.GetDepartment.GetCourse)
+                    sW.WriteLine("Student->" + s.getId + s.getName);
+                }
+            }
+            sW.Close();
+            fileStream.Close();
         }
     }
 }
