@@ -16,8 +16,8 @@ namespace FacultyInformationSystem
         {
             InitializeComponent();
         }
-       
-        University u = new University();
+
+        University u = University.GetUniversity();
         private void button1_Click(object sender, EventArgs e)
         {
             u.addFaculty(new Faculty(textBox1.Text,textBox2.Text));

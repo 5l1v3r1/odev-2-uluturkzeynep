@@ -12,9 +12,18 @@ namespace FacultyInformationSystem
         public static List<Faculty> GetFaculties{
             get { return faculties; }
             }
-        public University()
+        private University()
         {
             faculties = new List<Faculty>();
+        }
+        private static University university;
+        public static University GetUniversity()
+        {
+            if (university == null)
+            {
+                university = new University();
+            }
+            return university;
         }
         
         public void addFaculty(Faculty f)
