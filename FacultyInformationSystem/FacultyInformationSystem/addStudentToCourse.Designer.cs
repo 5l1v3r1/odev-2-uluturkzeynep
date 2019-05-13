@@ -42,6 +42,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button5
@@ -179,11 +180,22 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "Course";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(367, 351);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(127, 67);
+            this.button7.TabIndex = 28;
+            this.button7.Text = "Print";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // addStudentToCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 628);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label3);
@@ -222,5 +234,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button7;
     }
 }

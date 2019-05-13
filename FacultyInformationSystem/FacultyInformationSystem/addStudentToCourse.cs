@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,6 +91,19 @@ namespace FacultyInformationSystem
                 if(comboBox1.SelectedItem.ToString().Contains(course.GetDepartment.getName))
                 comboBox3.Items.Add(course.getName);
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            FileStream fileStream = new FileStream(@"./AboutStudents.txt", FileMode.OpenOrCreate);
+            StreamWriter sW = new StreamWriter(fileStream);
+            for(int i = 0; i < listBox1.Items.Count; i++)
+            {
+                sW.WriteLine(listBox1.Items[i].ToString());
+            }
+            
+            sW.Close();
+            fileStream.Close();
         }
     }
 }
