@@ -21,34 +21,43 @@ namespace FacultyInformationSystem
         Department d = new Department();
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (comboBox1.SelectedIndex == 0) //Combobo1'deki öğrencinin seçtiği öğrenim durumuna göre lisans,yüksek lisans,
+                                                 //doktora öğrencisi oluşturma ve listbox'a atma
+                {
+                    d.addStudent(new Graduate(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
+                    listBox1.Items.Clear();
+                    foreach (Student student in Department.GetStudents)
+                    {
+                        listBox1.Items.Add(student.ToString());
+                    }
+                }
+                if (comboBox1.SelectedIndex == 1)
+                {
+                    d.addStudent(new Undergraduate(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
+                    listBox1.Items.Clear();
+                    foreach (Student student in Department.GetStudents)
+                    {
+                        listBox1.Items.Add(student.ToString());
+                    }
+                }
+                if (comboBox1.SelectedIndex == 2)
+                {
+                    d.addStudent(new PhD(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
+                    listBox1.Items.Clear();
+                    foreach (Student student in Department.GetStudents)
+                    {
+                        listBox1.Items.Add(student.ToString());
+                    }
+                }
+            }
+            catch (Exception e)
+            {
 
-            if (comboBox1.SelectedIndex == 0)
-            {
-                d.addStudent(new Graduate(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
-                listBox1.Items.Clear();
-                foreach (Student student in Department.GetStudents)
-                {
-                    listBox1.Items.Add(student.ToString());
-                }
+                MessageBox.Show(e.Message);
             }
-            if (comboBox1.SelectedIndex == 1)
-            {
-                d.addStudent(new Undergraduate(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
-                listBox1.Items.Clear();
-                foreach (Student student in Department.GetStudents)
-                {
-                    listBox1.Items.Add(student.ToString());
-                }
-            }
-            if (comboBox1.SelectedIndex == 2)
-            {
-                d.addStudent(new PhD(textBox1.Text, textBox2.Text, new Department(comboBox2.SelectedItem.ToString())));
-                listBox1.Items.Clear();
-                foreach (Student student in Department.GetStudents)
-                {
-                    listBox1.Items.Add(student.ToString());
-                }
-            }
+            
            
         }
 
@@ -56,7 +65,7 @@ namespace FacultyInformationSystem
         {
             foreach (Department department in Faculty.GetDepartments) //https://www.frmtr.com/c-/4643411-listbox-daki-degeri-comboboxa-aktarma-yardim.html
             {
-                comboBox2.Items.Add(department.getName.ToString());
+                comboBox2.Items.Add(department.getName.ToString()); //Form yüklendiği zaman combobox2'e öğrencinin ekleneceği bölümü seçenek olarak sunma
             }
         }
 

@@ -17,15 +17,24 @@ namespace FacultyInformationSystem
             InitializeComponent();
         }
 
-        University u = University.GetUniversity();
+        University u = University.GetUniversity();//singleton design
         private void button1_Click(object sender, EventArgs e)
         {
-            u.addFaculty(new Faculty(textBox1.Text,textBox2.Text));
-            listBox1.Items.Clear();
-            foreach (Faculty faculties in University.GetFaculties)
+            try
             {
-                listBox1.Items.Add(faculties.ToString());
+                u.addFaculty(new Faculty(textBox1.Text, textBox2.Text));//textBox'lardan fakültenin id va name'ini alarak University classından fakülte üretme
+                listBox1.Items.Clear();
+                foreach (Faculty faculties in University.GetFaculties) //Üniversitedeki fakülte list'ine eklenen değerleri listbox'a atma
+                {
+                    listBox1.Items.Add(faculties.ToString());
+                }
             }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+            
             
         }
         public void add()
@@ -40,7 +49,7 @@ namespace FacultyInformationSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DepartmentForm departmentForm = new DepartmentForm();
+            DepartmentForm departmentForm = new DepartmentForm();//Bölüm ekleme formuna yönlendirme
             departmentForm.Show();
             this.Hide();
         }

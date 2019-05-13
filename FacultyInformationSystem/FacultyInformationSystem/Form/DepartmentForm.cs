@@ -20,22 +20,39 @@ namespace FacultyInformationSystem
         Faculty f = new Faculty();
         private void button1_Click(object sender, EventArgs e)
         {
-            f.addDepartment(new Department(textBox1.Text,textBox2.Text,new Faculty(comboBox1.SelectedItem.ToString())));
-            listBox1.Items.Clear();
-            foreach (Department departments in Faculty.GetDepartments)
+            try
             {
-                listBox1.Items.Add(departments.ToString());
+                f.addDepartment(new Department(textBox1.Text, textBox2.Text, new Faculty(comboBox1.SelectedItem.ToString())));
+                listBox1.Items.Clear();
+                foreach (Department departments in Faculty.GetDepartments)//Fakültedeki bölüm list'ine eklenen değerleri listbox'a ekleme
+                {
+                    listBox1.Items.Add(departments.ToString());
+                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
             
         }
 
         
         private void DepartmentForm_Load(object sender, EventArgs e)
         {
-            foreach (Faculty faculties in University.GetFaculties)
+            try
             {
-                comboBox1.Items.Add(faculties.getName.ToString());
+                foreach (Faculty faculties in University.GetFaculties) //Üniversitedeki fakülte list'ine eklenen değerlerden olan fakülte ismini combobox'a seçenek olarak sunma
+                {
+                    comboBox1.Items.Add(faculties.getName.ToString());
+                }
             }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+            
 
 
         }

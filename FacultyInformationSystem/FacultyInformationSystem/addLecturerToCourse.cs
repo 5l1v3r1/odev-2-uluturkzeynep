@@ -19,35 +19,52 @@ namespace FacultyInformationSystem
         }
 
         private void addLecturerToCourse_Load(object sender, EventArgs e)
-        {
+        {//Form yüklendiği zaman combobox1'e hocanın ekleneceği bölümü seçenek olarak sunma 
             comboBox3.Visible = false;
-            comboBox1.Items.Clear();
-            foreach (Course course in Department.GetCourses) //ilgili dersin bölümünü comboBox'ta seçenek olarak seçilebilmesi için
+            try
             {
-                comboBox1.Items.Add(course.GetDepartment.getName.ToString());
-                if (comboBox3.SelectedItem != null)
+                comboBox1.Items.Clear();
+                foreach (Course course in Department.GetCourses) //ilgili dersin bölümünü comboBox'ta seçenek olarak seçilebilmesi için
                 {
-                    this.Text = comboBox3.SelectedItem.ToString() + " Lecturers";
+                    comboBox1.Items.Add(course.GetDepartment.getName.ToString());
+                    if (comboBox3.SelectedItem != null)
+                    {
+                        this.Text = comboBox3.SelectedItem.ToString() + " Lecturers";
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             comboBox2.Visible = true;
-            comboBox2.Items.Clear();
-            foreach (Lecturer lecturer in Department.GetLecturers)
-            {
-                if (comboBox1.SelectedItem.ToString().Contains(lecturer.GetDepartment.getName))
+            try
+            {//Seçilen Bölüme göre combobox2'de ilgili bölümün derslerini seçenek olarak sunma
+                comboBox2.Items.Clear();
+                foreach (Lecturer lecturer in Department.GetLecturers)
                 {
-                    comboBox2.Items.Add(lecturer.ToString());
+                    if (comboBox1.SelectedItem.ToString().Contains(lecturer.GetDepartment.getName)) //combobox1'de seçilen bölümü içeren öğretmenlerin bilgisini combobox2'ye seçenek olarak sunma
+                    {
+                        comboBox2.Items.Add(lecturer.ToString());
+                    }
                 }
             }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            try//listbox'a comboboxlar'a eklenen ders ve öğretmenden seçilenleri ekleme
             {
                 listBox1.Items.Add(comboBox2.SelectedItem.ToString() + " Course: "+comboBox3.SelectedItem.ToString());
             }
@@ -86,18 +103,28 @@ namespace FacultyInformationSystem
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {//combobox1 yani bölüm seçildiğinde ilgili derslerin gelmesi için 
             comboBox3.Visible = true;
-            comboBox3.Items.Clear();
-            foreach (Course course in Department.GetCourses) //https://www.frmtr.com/c-/4643411-listbox-daki-degeri-comboboxa-aktarma-yardim.html
+            try
             {
-                if (comboBox1.SelectedItem.ToString().Contains(course.GetDepartment.getName))
-                    comboBox3.Items.Add(course.getName);
+                comboBox3.Items.Clear();
+                foreach (Course course in Department.GetCourses) //https://www.frmtr.com/c-/4643411-listbox-daki-degeri-comboboxa-aktarma-yardim.html
+                {
+                    if (comboBox1.SelectedItem.ToString().Contains(course.GetDepartment.getName))
+                        comboBox3.Items.Add(course.getName);
+                }
             }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
-        {
+        {//Dosya yazdırma işlemlerini listbox'taki elemanları ele alarak yaptım. Direkt Lecturer'ın bilgilerini alarak yapmayı denedim ama 
+            // verdiği ders bilgisini almada sorun yaşadığım için yapamadım.
             FileStream fileStream = new FileStream(@"./AboutLecturer.txt", FileMode.OpenOrCreate);
             StreamWriter sW = new StreamWriter(fileStream);
             for (int i = 0; i < listBox1.Items.Count; i++)

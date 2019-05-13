@@ -43,6 +43,15 @@ namespace FacultyInformationSystem
             this.name = name;
             this.department = department;
         }
+
+        public Lecturer(string id, string name, Department department,Course course)
+        {
+            this.id = id;
+            this.name = name;
+            this.department = department;
+            this.course = course;
+        }
+
         public string ToString()
         {
             return $"L Name:{name} L Id:{id} Department:{department.getName}";

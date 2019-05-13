@@ -45,6 +45,10 @@ namespace FacultyInformationSystem
         {
 
         }
+        public Course(string name)
+        {
+            this.name = name;
+        }
 
         public Course(string id,string name,Department department)
         {

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace FacultyInformationSystem
 {
     public partial class LecturerForm : Form
-    {
+    {//Bölüme öğretim elemanı ekleme
         public LecturerForm()
         {
             InitializeComponent();
@@ -26,30 +26,57 @@ namespace FacultyInformationSystem
 
         private void LecturerForm_Load(object sender, EventArgs e)
         {
-            foreach (Department department in Faculty.GetDepartments)
+            try
             {
-                comboBox1.Items.Add(department.getName.ToString());
+                foreach (Department department in Faculty.GetDepartments) //Form yüklendiği zaman combobox1'e hocanın ekleneceği bölümü seçenek olarak sunma
+                {
+                    comboBox1.Items.Add(department.getName.ToString());
+                }
             }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e);
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            d.addLecturer(new Lecturer(textBox1.Text, textBox2.Text, new Department(comboBox1.SelectedItem.ToString())));
-            listBox1.Items.Clear();
-            foreach (Lecturer lecturer in Department.GetLecturers)
+            try
             {
-                listBox1.Items.Add(lecturer.ToString());
+                ////textBox'lardan öğretim elemanının id va name'ini  ve combobox1'de seçili olan fakülte adına göre Bölüm classından yararlanarak öğretim elemanı üretme
+                d.addLecturer(new Lecturer(textBox1.Text, textBox2.Text, new Department(comboBox1.SelectedItem.ToString())));
+                listBox1.Items.Clear();
+                foreach (Lecturer lecturer in Department.GetLecturers) //Üniversitedeki fakülte list'ine eklenen değerleri listbox'a atma
+                {
+                    listBox1.Items.Add(lecturer.ToString());
+                }
             }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e);
+            }
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            d.deleteLecturer(new Lecturer(textBox2.Text));
-            listBox1.Items.Clear();
-            foreach (Lecturer lecturer in Department.GetLecturers)
-            {
-                listBox1.Items.Remove(lecturer.ToString());
+            try
+            { //Öğretim elemanını id'ine göre silme
+                d.deleteLecturer(new Lecturer(textBox2.Text));
+                listBox1.Items.Clear();
+                foreach (Lecturer lecturer in Department.GetLecturers)
+                {
+                    listBox1.Items.Remove(lecturer.ToString());
+                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e);
+            }
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
