@@ -35,6 +35,11 @@ namespace FacultyInformationSystem
         {
             get { return student; }
         }
+        private Course course;
+        public Course GetCourse
+        {
+            get { return course; }
+        }
 
         public Course()
         {

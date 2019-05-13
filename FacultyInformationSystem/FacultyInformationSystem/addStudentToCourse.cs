@@ -20,17 +20,23 @@ namespace FacultyInformationSystem
         private void button1_Click(object sender, EventArgs e)
         {
             //listBox1.Items.Clear();
-            listBox1.Items.Add(comboBox2.SelectedItem.ToString());
+            listBox1.Items.Add(comboBox2.SelectedItem.ToString()+" Course "+comboBox3.SelectedItem.ToString());
         }
 
         private void addStudentToCourse_Load(object sender, EventArgs e)
         {
+            comboBox3.Visible = false;
             comboBox1.Items.Clear();
             foreach (Course course in Department.GetCourses) //https://www.frmtr.com/c-/4643411-listbox-daki-degeri-comboboxa-aktarma-yardim.html
             {
                 comboBox1.Items.Add(course.GetDepartment.getName.ToString());
-                this.Text = course.getName +" Students";
+                if (comboBox3.SelectedItem != null)
+                {
+                    this.Text = comboBox3.SelectedItem.ToString() + " Students";
+                }
+               
             }
+           
 
         }
 
@@ -40,7 +46,7 @@ namespace FacultyInformationSystem
             comboBox2.Items.Clear();
             foreach (Student student in Department.GetStudents)
             {
-                if (comboBox1.SelectedItem.ToString().Contains(student.GetDepartment.getName.ToString()))
+                if (comboBox1.SelectedItem.ToString().Contains(student.GetDepartment.getName))
                 {
                     comboBox2.Items.Add(student.ToString());
                 }
@@ -73,6 +79,17 @@ namespace FacultyInformationSystem
             LecturerForm lecturerForm = new LecturerForm();
             lecturerForm.Show();
             this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox3.Visible = true;
+            comboBox3.Items.Clear();
+            foreach (Course course in Department.GetCourses) //https://www.frmtr.com/c-/4643411-listbox-daki-degeri-comboboxa-aktarma-yardim.html
+            {
+                if(comboBox1.SelectedItem.ToString().Contains(course.GetDepartment.getName))
+                comboBox3.Items.Add(course.getName);
+            }
         }
     }
 }

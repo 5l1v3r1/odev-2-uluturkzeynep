@@ -21,6 +21,11 @@ namespace FacultyInformationSystem
         {
 
         }
+
+        public Graduate(string id, string name, Department department,Course course) : base(id, name, department,course)
+        {
+
+        }
         Department d = new Department();
         public override string ToString()
         {

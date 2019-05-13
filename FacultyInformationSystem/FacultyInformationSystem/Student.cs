@@ -14,6 +14,11 @@ namespace FacultyInformationSystem
         {
             get { return department; }
         }
+        private Course course;
+        public Course GetCourse
+        {
+            get { return course; }
+        }
 
         public string getId
         {
@@ -39,6 +44,14 @@ namespace FacultyInformationSystem
             this.id = id;
             this.name = name;
             this.department = department;
+        }
+
+        public Student(string id, string name, Department department,Course course)
+        {
+            this.id = id;
+            this.name = name;
+            this.department = department;
+            this.course = course;
         }
 
         abstract public string ToString();

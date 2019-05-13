@@ -23,6 +23,12 @@ namespace FacultyInformationSystem
         {
             get { return department; }
         }
+        private Course course;
+        public Course GetCourse
+        {
+            get { return course; }
+        }
+
         public Lecturer()
         {
 

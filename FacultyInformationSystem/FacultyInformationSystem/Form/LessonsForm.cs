@@ -45,16 +45,9 @@ namespace FacultyInformationSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null)
-            {
                 addStudentToCourse addStudent = new addStudentToCourse();
                 addStudent.Show();
                 this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("You didnt pick a Course from list.");
-            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -68,7 +61,8 @@ namespace FacultyInformationSystem
             FacultyForm facultyForm = new FacultyForm();
             facultyForm.Show(); this.Hide();
         }
-
+        addLecturerToCourse add;
+        addStudentToCourse addS;
         private void button1_Click(object sender, EventArgs e)
         {//https://www.kodlamamerkezi.com/c-net/c-ile-dosya-okuma-ve-yazma-islemleri/
             FileStream fileStream = new FileStream(@"./AboutCourse.txt",FileMode.OpenOrCreate);
@@ -76,17 +70,25 @@ namespace FacultyInformationSystem
             
             foreach(Course c in Department.GetCourses)
             {
+                
                 sW.WriteLine("Course->" + c.getName);
-                foreach(Lecturer l in Department.GetLecturers)
+                if (c.getName.Contains(add.listBox1.Items.ToString()))
                 {
-                    if(l.GetDepartment.GetCourse==c.GetDepartment.GetCourse)
-                    sW.WriteLine("Lecturer->" +l.getId + l.getName);
+                    foreach (Lecturer l in Department.GetLecturers)
+                    {
+                        if (l.GetCourse == c.GetCourse)
+                            sW.WriteLine("Lecturer->" + l.getId + l.getName);
+                    }
                 }
-                foreach(Student s in Department.GetStudents)
+                if (c.GetCourse.getName.ToString().Contains(addS.listBox1.Items.ToString()))
                 {
-                    if(s.GetDepartment.GetCourse==c.GetDepartment.GetCourse)
-                    sW.WriteLine("Student->" + s.getId + s.getName);
+                    foreach (Student s in Department.GetStudents)
+                    {
+                        if (s.GetCourse == c.GetCourse)
+                            sW.WriteLine("Student->" + s.getId + s.getName);
+                    }
                 }
+                    
             }
             sW.Close();
             fileStream.Close();

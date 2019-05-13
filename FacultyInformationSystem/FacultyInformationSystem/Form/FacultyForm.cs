@@ -21,7 +21,6 @@ namespace FacultyInformationSystem
         private void button1_Click(object sender, EventArgs e)
         {
             u.addFaculty(new Faculty(textBox1.Text,textBox2.Text));
-            DepartmentForm department = new DepartmentForm();
             listBox1.Items.Clear();
             foreach (Faculty faculties in University.GetFaculties)
             {
@@ -42,7 +41,8 @@ namespace FacultyInformationSystem
         private void button2_Click(object sender, EventArgs e)
         {
             DepartmentForm departmentForm = new DepartmentForm();
-            departmentForm.Show(); this.Hide();
+            departmentForm.Show();
+            this.Hide();
         }
     }
 }

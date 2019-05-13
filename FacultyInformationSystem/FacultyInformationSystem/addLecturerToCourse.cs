@@ -19,11 +19,15 @@ namespace FacultyInformationSystem
 
         private void addLecturerToCourse_Load(object sender, EventArgs e)
         {
+            comboBox3.Visible = false;
             comboBox1.Items.Clear();
             foreach (Course course in Department.GetCourses) //ilgili dersin bölümünü comboBox'ta seçenek olarak seçilebilmesi için
             {
                 comboBox1.Items.Add(course.GetDepartment.getName.ToString());
-                this.Text = course.getName + " Lecturers";
+                if (comboBox3.SelectedItem != null)
+                {
+                    this.Text = comboBox3.SelectedItem.ToString() + " Lecturers";
+                }
             }
         }
 
@@ -33,7 +37,7 @@ namespace FacultyInformationSystem
             comboBox2.Items.Clear();
             foreach (Lecturer lecturer in Department.GetLecturers)
             {
-                if (comboBox1.SelectedItem.ToString().Contains(lecturer.GetDepartment.getName.ToString()))
+                if (comboBox1.SelectedItem.ToString().Contains(lecturer.GetDepartment.getName))
                 {
                     comboBox2.Items.Add(lecturer.ToString());
                 }
@@ -44,11 +48,11 @@ namespace FacultyInformationSystem
         {
             try
             {
-                listBox1.Items.Add(comboBox2.SelectedItem.ToString());
+                listBox1.Items.Add(comboBox2.SelectedItem.ToString() + " Course: "+comboBox3.SelectedItem.ToString());
             }
             catch (Exception)
             {
-                MessageBox.Show("You didnt select a lecturer.");
+                MessageBox.Show("You didnt select a lecturer or Course.");
             }
         }
 
@@ -78,6 +82,17 @@ namespace FacultyInformationSystem
             LecturerForm lecturerForm = new LecturerForm();
             lecturerForm.Show();
             this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox3.Visible = true;
+            comboBox3.Items.Clear();
+            foreach (Course course in Department.GetCourses) //https://www.frmtr.com/c-/4643411-listbox-daki-degeri-comboboxa-aktarma-yardim.html
+            {
+                if (comboBox1.SelectedItem.ToString().Contains(course.GetDepartment.getName))
+                    comboBox3.Items.Add(course.getName);
+            }
         }
     }
 }

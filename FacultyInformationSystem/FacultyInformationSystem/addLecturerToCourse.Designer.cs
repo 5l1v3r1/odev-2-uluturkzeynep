@@ -40,6 +40,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button6
@@ -56,7 +58,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(33, 216);
+            this.label3.Location = new System.Drawing.Point(33, 297);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 36;
@@ -75,7 +77,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(37, 250);
+            this.comboBox2.Location = new System.Drawing.Point(37, 331);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(149, 24);
             this.comboBox2.TabIndex = 34;
@@ -88,6 +90,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(149, 24);
             this.comboBox1.TabIndex = 35;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -95,7 +98,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(436, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 39);
+            this.label2.Size = new System.Drawing.Size(123, 38);
             this.label2.TabIndex = 33;
             this.label2.Text = "Course";
             // 
@@ -158,6 +161,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(37, 250);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(149, 24);
+            this.comboBox3.TabIndex = 35;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(33, 216);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Course";
+            // 
             // addLecturerToCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,8 +186,10 @@
             this.ClientSize = new System.Drawing.Size(1048, 655);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button5);
@@ -195,7 +218,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ListBox listBox1;
     }
 }

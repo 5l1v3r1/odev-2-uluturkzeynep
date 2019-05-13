@@ -22,7 +22,12 @@ namespace FacultyInformationSystem
         {
             
         }
-        
+
+        public PhD(string id, string name, Department department,Course course) : base(id, name, department,course)
+        {
+
+        }
+
         public override string ToString()
         {
             return $"S Name:{name} S Id:{id} Department:{GetDepartment.getName}";
